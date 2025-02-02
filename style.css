@@ -113,6 +113,8 @@ h2 {
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: absolute;
   z-index: 1;
+  margin-top: 35px;
+  
 }
   
 .arrow:hover {
