@@ -64,3 +64,28 @@ function updateToggleIcon() {
   const isLightMode = body.classList.contains("light-mode");
   themeToggle.innerHTML = isLightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 }
+
+/* Arrows */
+const skillsGrid = document.querySelector('.skills-grid');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+const skill = document.querySelector('.skill');
+const scrollStep = skill.offsetWidth + 20; // 20px gap
+
+leftArrow.addEventListener('click', () => {
+  skillsGrid.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+});
+
+rightArrow.addEventListener('click', () => {
+  skillsGrid.scrollBy({ left: scrollStep, behavior: 'smooth' });
+});
+
+/* Remove the arrow at the end */
+const updateArrows = () => {
+  leftArrow.style.visibility = skillsGrid.scrollLeft <= 0 ? 'hidden' : 'visible';
+  rightArrow.style.visibility = skillsGrid.scrollLeft + skillsGrid.clientWidth >= skillsGrid.scrollWidth ? 'hidden' : 'visible';
+};
+
+skillsGrid.addEventListener('scroll', updateArrows);
+updateArrows(); // Initial check
