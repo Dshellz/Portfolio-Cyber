@@ -165,6 +165,15 @@ footer {
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
 .contact-form {
     flex: 1;
     display: flex;
@@ -242,7 +251,19 @@ footer {
 }
 
 /* Theme Toggle Button */
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
 .theme-toggle {
+    z-index: 1000;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -314,6 +335,11 @@ body.light-mode .contact-form button {
     color: #F0F0F0;
 }
 
+body.light-mode footer {
+    color: #1A1A1A;
+    background-color: #F0F0F0;
+}
+
 /* Info Items (Contact Info) */
 .info-item {
     display: flex;
@@ -356,3 +382,5 @@ body.light-mode .info-item a {
 body.light-mode .info-item a:hover {
     color: #00cf37;
 }
+
+/* 2025 Dshellz All rights reserved. */
