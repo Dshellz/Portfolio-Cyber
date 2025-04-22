@@ -18,6 +18,10 @@ body {
 header {
     text-align: center;
     padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: transparent;
 }
 
 header h1 {
@@ -30,6 +34,43 @@ header p {
     font-size: 1.2rem;
     color: #F0F0F0;  
 }
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* ⛔ empêche de bloquer les clics */
+  }
+  
+.header-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    filter: brightness(0.8) contrast(1.1) grayscale(0.4);
+  }
+
+.header-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* Important : laisse passer les clics */
+  }
+
+.header-animation img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    filter: brightness(0.7) grayscale(0.4) contrast(1.2);
+  }
+  
 
 .btn {
     display: inline-block;
@@ -444,7 +485,7 @@ body.light-mode .info-item a:hover {
     position: relative;
 }
   
-  .flip-card-inner {
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -454,11 +495,11 @@ body.light-mode .info-item a:hover {
     will-change: transform;
 }
   
-  .flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
   
-  .flip-card-front, .flip-card-back {
+.flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -475,18 +516,18 @@ body.light-mode .info-item a:hover {
     overflow: hidden;
 }
   
-  .flip-card-front img {
+.flip-card-front img {
     width: 80%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
 }
   
-  .flip-card-front h3 {
+.flip-card-front h3 {
     color: #00FF00;
 }
   
-  .flip-card-back {
+.flip-card-back {
     transform: rotateY(180deg);
     color: #F0F0F0;
 }
@@ -514,7 +555,7 @@ body.light-mode .flip-card-front img {
     margin-top: 30px;
   }
   
-  .lang-badge {
+.lang-badge {
     background-color: #1A1A1A;
     color: #00FF00;
     border: 1px solid #00FF00;
@@ -525,47 +566,47 @@ body.light-mode .flip-card-front img {
     transition: transform 0.3s ease;
   }
   
-  .lang-badge:hover {
+.lang-badge:hover {
     transform: scale(1.1);
     background-color: #00FF00;
     color: #0A0A0A;
   }
   
   /* Light mode adaptation */
-  body.light-mode .lang-badge {
+body.light-mode .lang-badge {
     background-color: #fff;
     color: #1A1A1A;
     border: 1px solid #1A1A1A;
   }
-  
-  body.light-mode .lang-badge:hover {
+
+body.light-mode .lang-badge:hover {
     background-color: #1A1A1A;
     color: #fff;
   }
 
-  .footer-icons {
+.footer-icons {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-bottom: 15px;
   }
   
-  .footer-icons a {
+.footer-icons a {
     color: #00FF00;
     font-size: 2rem;
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
-  .footer-icons a:hover {
+.footer-icons a:hover {
     color: #00BFFF;
     transform: scale(1.2);
   }
   
-  body.light-mode .footer-icons a {
+body.light-mode .footer-icons a {
     color: #1A1A1A;
   }
   
-  body.light-mode .footer-icons a:hover {
+body.light-mode .footer-icons a:hover {
     color: #00cf37;
   }
   
