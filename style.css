@@ -542,5 +542,31 @@ body.light-mode .flip-card-front img {
     background-color: #1A1A1A;
     color: #fff;
   }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-icons a {
+    color: #00FF00;
+    font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-icons a:hover {
+    color: #00BFFF;
+    transform: scale(1.2);
+  }
+  
+  body.light-mode .footer-icons a {
+    color: #1A1A1A;
+  }
+  
+  body.light-mode .footer-icons a:hover {
+    color: #00cf37;
+  }
   
 /* 2025 Dshellz All rights reserved. */
